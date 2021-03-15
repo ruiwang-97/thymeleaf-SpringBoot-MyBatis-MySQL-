@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace绑定一个对应的Mapper接口-->
+<mapper namespace="com.kuang.rui.mapper.EmployeeMapper">
+    <!--Select查询语句-->
+    <select id="getAllEmp"  resultType="com.kuang.rui.pojo.Employee">
+		select e.id, e.lastName, e.email, e.gender, e.birth, e.did, departmentName
+        from employ e
+        left join department d on d.id = e.did
+	</select>
+    <!--删除员工信息-->
+    <delete id="deleteEmplById">
+        delete from employ e where e.id=#{id}
+    </delete>
+    <!--添加员工-->
+    <insert id="addEmpl" parameterType="com.kuang.rui.pojo.Employee">
+        insert into employ (id,lastName,email,gender,did,birth)
+         values (#{id},#{lastName},#{email},#{gender},#{did},#{birth})
+    </insert>
+    <!--通过id查询员工信息-->
+    <select id="getEmpById" resultType="com.kuang.rui.pojo.Employee">
+        select e.id, e.lastName, e.email, e.gender, e.birth, e.did, departmentName
+        from employ e
+        left join department d on d.id = e.did
+        where e.id = #{id}
+    </select>
+    <!--修改员工信息-->
+    <update id="updateEmpl" parameterType="com.kuang.rui.pojo.Employee">
+        update employ set lastName=#{lastName},
+                          email=#{email},
+                          gender=#{gender},
+                          did=#{did},
+                          birth=#{birth} where id=#{id}
+    </update>
+</mapper>
