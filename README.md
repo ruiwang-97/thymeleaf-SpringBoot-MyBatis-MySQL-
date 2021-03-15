@@ -1,0 +1,5 @@
+在狂神的SpringBoot员工管理项目上
+引入MySQL和MyBatis
+新建管理员表、员工表和部门表
+进行Mapper层和Controller层的重新编写
+实现了管理员登录及员工的增删改查等功能。
