@@ -1,6 +1,8 @@
 ## 项目简介
 在[狂神的SpringBoot员工管理项目的基础](https://blog.csdn.net/qq_39181839/article/details/111304598)上，整合了MySQL和MyBatis。
 新建管理员表、员工表和部门表，进行Mapper层、Service层和Controller层的重新编写，实现了管理员登录及员工的增删改查等功能。
+## 项目源码
+[百度网盘](https://pan.baidu.com/s/12Rq41luttRM8aTbiLVZrQg)  提取密码：wrbg
 ### 环境要求
 - IDEA 
 - MySQL
